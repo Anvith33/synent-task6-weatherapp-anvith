@@ -8,5 +8,17 @@ url = f"https://api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key}
 
 response = requests.get(url)
 
-print(response.status_code)
-print(response.json())
+data = response.json()
+if data["cod"] == 200:
+    main = data["main"]
+    temperature = main["temp"] - 273.15  # Convert from Kelvin to Celsius
+    humidity = main["humidity"]
+    weather_description = data["weather"][0]["description"]
+
+    print(f"\n***Weather Report***")
+    print(f"City: {city}")
+    print(f"Temperature: {temperature:.2f}°C")
+    print(f"Humidity: {humidity}%")
+    print(f"Weather Description: {weather_description}")
+else:
+    print("City not found.")
