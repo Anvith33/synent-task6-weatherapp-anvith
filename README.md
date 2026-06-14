@@ -43,10 +43,12 @@ Sample Output
 Enter city name: Bengaluru
 
 ----Weather Report----
+
 City: Bengaluru
 Temperature: 28.89°C
 Humidity: 65%
 Weather Description: overcast clouds
 
 Output Screenshot:
+
 weatherapp_output.png and weatherapp1_output.png
